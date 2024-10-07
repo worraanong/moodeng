@@ -1,137 +1,21 @@
-<style>
-.base {
-    width: 128px;
-    height: 128px;
-}
-
-.break,
-#crouch:hover {
-    background: url('/moodeng.png') 0 0;
-}
-
-.charge {
-    background: url('/moodeng.png') 384px 0;
-}
-
-.float {
-    background: url('/moodeng.png') 256px 0;
-}
-
-.stand {
-    background: url('/moodeng.png') 128px 0;
-}
-
-#run {
-    animation: aniRun 0.6s steps(4) infinite;
-}
-
-#dash {
-    left: 100px;
-    position: relative;
-
-}
-
-#dash:hover {
-    animation-name: aniDash, aniMove, aniDash;
-    animation-duration: 0.3s, 0.6s, 0.2s;
-    animation-delay: 0s, 0.3s, 0.9s;
-    animation-timing-function: steps(3), ease-in-out, steps(3);
-    animation-direction: normal, normal, reverse;
-    animation-fill-mode: forwards;
-}
-
-#flinch:hover {
-    animation: aniFlinch 0.2s steps(2) 3;
-}
-
-
-#turn:hover {
-    transform: scaleX(-1);
-}
-
-#jump:hover {
-    animation-name: aniJump, aniJump;
-    animation-duration: 0.3s, 0.5s;
-    animation-delay: 0s, 0.3s;
-    animation-timing-function: steps(1), steps(1);
-    animation-direction: normal, reverse;
-}
-
-@keyframes aniRun {
-    0% {
-        background-position-x: 0;
-    }
-
-    100% {
-        background-position-x: -512px;
-    }
-}
-
-@keyframes aniDash {
-    0% {
-        background-position-x: -128px;
-    }
-
-    100% {
-        background-position-x: 256px;
-    }
-}
-
-@keyframes aniMove {
-    0% {
-        left: 100px;
-    }
-
-    100% {
-        left: 0px;
-    }
-}
-
-@keyframes aniFlinch {
-    0% {
-        background-position-x: 0;
-    }
-
-    100% {
-        background-position-x: -256px;
-    }
-}
-
-@keyframes aniJump {
-    0% {
-        background-position-x: 0;
-    }
-
-    50% {
-        background-position-x: -256px;
-    }
-
-    100% {
-        background-position-x: -384px;
-    }
-}
-</style>
-
+<script>
+import '~/assets/css/main.css'
+</script>
 <template>
-    <div>
-        <h1>Moo Deng</h1>
-
-        <p>Sprite by <a href="https://limpck.itch.io/moodeng">LimpCK</a></p>
-        <img src="/moodeng.png">
-        <h2>Animate</h2>
-        <div class="base break">Break</div>
-        <div class="base charge">Charge</div>
-        <div class="base float">Float</div>
-        <div class="base stand">Stand</div>
-        <div id="run" class="base stand">Run</div>
-        <h3>Hover to ...</h3>
-        Dash
-        <div id="dash" class="base stand"></div>
-        <div id="flinch" class="base break">Flinch</div>
-        <div id="crouch" class="base stand">Crouch</div>
-        Turn
-        <div id="turn" class="base stand"></div>
-        <div id="jump" class="base stand">Jump</div>
-
+    <h1>Moo Deng</h1>
+    <p>Hacktoberfest 2024 mini project</p>
+    
+    <div id="play-area">
+        <div id="moodeng" class="base stand">เดี๋ยวมาเขียนต่อ ง่วง</div>
     </div>
+
+    <AnimationSheet></AnimationSheet>
+    <h2>② Control</h2>
+    <pre>
+    ↑   Jump
+    ↓   Crouch
+   ← →  Run
+  ←← →→ Dash
+    </pre>
+
 </template>
