@@ -6,7 +6,8 @@ import '~/assets/css/main.css'
     <p>Hacktoberfest 2024 mini project</p>
 
     <div id="play-area">
-        <div id="moodeng" class="base stand">เดี๋ยวมาเขียนต่อ ง่วง</div>
+        เดี๋ยวมาเขียนต่อ ง่วง
+        <Moodeng />
     </div>
 
     <AnimationSheet></AnimationSheet>
@@ -17,5 +18,5 @@ import '~/assets/css/main.css'
    ← →      Run
   ←← →→     Dash
     </pre>
-
+    <Hitbox />
 </template>
