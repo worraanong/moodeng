@@ -23,3 +23,7 @@
   border: 1px solid #f00;
   opacity: 0.5;
 }
+
+.layer-invisible {
+    border: none
+}
