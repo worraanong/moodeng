@@ -2,8 +2,10 @@
 
 import '~/assets/css/animated.css'
 const props = defineProps({
+    desc: { type: Boolean, Required: false, default: false },
     pose: { type: String, default: 'stand' },
 })
+const lang = useState('language')
 
 const poses = {
     "0": { name: { en: "break", th: "หยุ๊ดด" } },
@@ -17,17 +19,21 @@ const poses = {
     "8": { name: { en: "turn", th: "หัน" }, stance: "stand" },
     "9": { name: { en: "jump", th: "โดด" }, stance: "stand" },
 }
-const stance = (pose) => {
-    const item = _Find(poses, x => { return x.name.en == pose })
-    return item ? item?.stance : ''
+
+const poseDetail = () => {
+    return _Find(poses, x => { return x.name.en == props.pose })
+}
+const stance = () => {
+    return poseDetail()?.stance
 }
 
-const text = (lang) => {
-
+const text = () => {
+    const text = _Get(poseDetail()?.name, lang.value, '')
+    return _StartCase(text)
 }
-
 </script>
+
 <template>
-    <p>{{ pose }}</p>
-    <div :class="['base', stance(pose), pose]"></div>
+    <p v-show="desc" class="mb-0">{{ text() }}</p>
+    <div :class="['base', stance(), pose]"></div>
 </template>
