@@ -18,6 +18,8 @@ const poses = {
     "7": { name: { en: "crouch", th: "หมอบ" }, stance: "stand" },
     "8": { name: { en: "turn", th: "หัน" }, stance: "stand" },
     "9": { name: { en: "jump", th: "โดด" }, stance: "stand" },
+    "10": { name: { en: "flinch-auto", th: "ดีดดิ้น" }, stance: "break" },
+
 }
 
 const poseDetail = () => {

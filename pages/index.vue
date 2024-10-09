@@ -1,12 +1,12 @@
-<script>
+<script setup>
 import '~/assets/css/main.css'
 </script>
 <template>
     <h1>Moo Deng</h1>
     <p>Hacktoberfest 2024 mini project</p>
-
     <div id="play-area">
-        <div id="moodeng" class="base stand">เดี๋ยวมาเขียนต่อ ง่วง</div>
+        เอ้ย อย่ามาจิ้มนะ!
+        <Playable />
     </div>
 
     <AnimationSheet></AnimationSheet>
@@ -17,5 +17,5 @@ import '~/assets/css/main.css'
    ← →      Run
   ←← →→     Dash
     </pre>
-
+    <Hitbox />
 </template>
