@@ -50,6 +50,7 @@
   transform: scaleX(-1);
 }
 
+.jump-up,
 .jump:hover {
   animation-name: aniJump, aniJump;
   animation-duration: 0.3s, 0.5s;
@@ -57,6 +58,7 @@
   animation-timing-function: steps(1), steps(1);
   animation-direction: normal, reverse;
 }
+
 
 @keyframes aniRun {
   0% {
@@ -110,4 +112,8 @@
   100% {
     background-position-x: -384px;
   }
+}
+
+@keyframes aniTurn {
+  100% {transform: scaleX(-1)}
 }

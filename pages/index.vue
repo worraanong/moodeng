@@ -1,4 +1,4 @@
-<script>
+<script setup>
 import '~/assets/css/main.css'
 </script>
 <template>
@@ -6,16 +6,20 @@ import '~/assets/css/main.css'
     <p>Hacktoberfest 2024 mini project</p>
 
     <div id="play-area">
-        <div id="moodeng" class="base stand">เดี๋ยวมาเขียนต่อ ง่วง</div>
+        เอ้ย อย่ามาจิ้มนะ!
+        <Playable />
     </div>
 
-    <AnimationSheet></AnimationSheet>
+    <AnimationSheet />
     <h2>② Control</h2>
     <pre>
-    ↑       Jump
-    ↓       Crouch
-   ← →      Run
-  ←← →→     Dash
+                                Hold
+    ↑       w   Jump
+    ↓       s   Crouch
+    ←       a   Go Left         Run
+    →       d   Go Right        Run
+   ← ←     a a  Dash Left
+   → →     d d  Dash Right
     </pre>
-
+    <Hitbox />
 </template>
