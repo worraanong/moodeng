@@ -32,7 +32,6 @@
   left: 100px;
   position: relative;
 }
-
 .dash:hover {
   animation-name: aniDash, aniMove, aniDash;
   animation-duration: 0.3s, 0.6s, 0.2s;
@@ -41,6 +40,17 @@
   animation-direction: normal, normal, reverse;
   animation-fill-mode: forwards;
 }
+
+.dash-start {
+  animation: aniDash 0.3s steps(3);
+  animation-fill-mode: forwards;
+}
+.dash-end {
+  animation: aniDash 0.3s steps(3);
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
 
 .flinch:hover {
   animation: aniFlinch 0.2s steps(2) 3;
