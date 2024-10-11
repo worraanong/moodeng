@@ -9,6 +9,7 @@ import '~/assets/css/main.css'
         เอ้ย อย่ามาจิ้มนะ!
         <Playable />
     </div>
+    <KeyLogging/>
 
     <AnimationSheet />
     <h2>② Control</h2>

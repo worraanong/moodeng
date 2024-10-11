@@ -1,5 +1,4 @@
 <script setup>
-
 import '~/assets/css/animated.css'
 
 const props = defineProps({
@@ -15,8 +14,8 @@ const config = {
 const ani = reactive(['stand'])
 const newStyle = reactive({
     left: '200px'
-
 })
+
 const pos = {
     x: 0,
     y: 0,
@@ -40,6 +39,7 @@ const handleKeydown = (e) => {
     switch (e.key) {
         case "ArrowUp":
         case "w":
+        case " ":
             jump()
             break;
         case "ArrowDown":
@@ -87,10 +87,10 @@ const moveLeft = () => {
         }
         if (pos.left > -config.leftCollisionOffset)
             newStyle.left = `${_ToInteger(s) - config.speed}px`
-
     }
-
 }
+
+
 
 const moveRight = () => {
     const s = _TrimEnd(newStyle.left, 'px')
@@ -113,7 +113,6 @@ const moveRight = () => {
 const jump = () => {
     ani.push('jump-up')
     resetPose('jump-up')
-
 }
 
 const crouch = () => {
