@@ -1,42 +1,24 @@
 <script setup>
 import '~/assets/css/layer.css'
-const newPose = ref('stand')
-const randomPose = () => {
-    newPose.value = 'flinch-auto'
-    resetPose()
+const keylogging = ref([])
+
+const logKey = (e) => {
+    keylogging.value.push(e.key)
 }
 
-const test = () => {
-    newPose.value = 'float'
-    resetPose(400)
-}
 
-const test2 = () => {
-    newPose.value = 'break'
-    resetPose(400)
-}
-
-const resetPose = (delay = 800) => {
-    _Delay(() => { newPose.value = 'stand' }, delay)
-}
+onMounted(() => {
+    window.addEventListener("keydown", (e) => { logKey(e) })
+})
 
 </script>
 
-<style>
-.flinch-auto {
-    animation: aniFlinch 0.2s steps(2) 3;
-}
-
-.layer-collision {
-    cursor: pointer;
-
-}
-</style>
 <template>
 
-    <div class="layer-invisible layer-sprite">
+    <div :style="newStyle" class="layer-invisible layer-sprite">
         <div class="layer-invisible layer-collision" @click="randomPose()"></div>
-        <Moodeng :pose="newPose" />
+        <Character />
     </div>
-    <input placeholder="↑ ↓" @keyup.up="test()" @keyup.down="test2()">
+
+    <textarea v-model="keylogging" rows="10">{{ keylogging }}</textarea>
 </template>
