@@ -108,16 +108,16 @@ const move = () => {
 
 const dash = () => {
     if (!_Includes(ani, 'dash-start')) {
-            ani.push('dash-start')
-            pos.dashing = true
-        }
-        let id = setInterval(move, 20);
-        _Delay(() => {
-            clearInterval(id)
-            _Pull(ani, 'dash-start')
-            pos.dashing = false
-        }, 1000)
-        resetAfter('dash-end', 200)
+        ani.push('dash-start')
+        pos.dashing = true
+    }
+    let id = setInterval(move, 20);
+    _Delay(() => {
+        clearInterval(id)
+        _Pull(ani, 'dash-start')
+        pos.dashing = false
+    }, 1000)
+    resetAfter('dash-end', 200)
 }
 
 // Animations
@@ -201,6 +201,9 @@ onMounted(() => {
 
 #char {
     position: absolute;
+}
+
+.layer-collision {
     cursor: pointer;
 }
 
@@ -210,5 +213,7 @@ onMounted(() => {
 </style>
 
 <template>
-    <div id="char" :style="styles" :class="['base', ani]" @click="handleClick()"></div>
+    <div id="char" :style="styles" :class="['base', ani]">
+        <div class="layer-invisible layer-collision" @click="handleClick()"></div>
+    </div>
 </template>
