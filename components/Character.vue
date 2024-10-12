@@ -5,8 +5,8 @@ const props = defineProps({
 })
 
 const config = {
-    leftCollisionOffset: 21,
-    characterWidth: 128,
+    leftCollisionOffset: 0, //21,
+    characterWidth: 80,
     areaWidth: 800,
     speed: 4,
     doublePressDelta: 200
