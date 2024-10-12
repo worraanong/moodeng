@@ -8,5 +8,5 @@ onMounted(() => {
 })
 </script>
 <template>
-    <textarea rows="11">{{ keys }}</textarea>
+    <textarea rows="11" disabled>{{ keys }}</textarea>
 </template>

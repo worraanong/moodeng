@@ -6,8 +6,8 @@ const props = defineProps({
 
 const config = {
     leftCollisionOffset: 21,
-    characterWidth: 80,
-    areaWidth: 700,
+    characterWidth: 128,
+    areaWidth: 800,
     speed: 4,
     doublePressDelta: 200
 }
@@ -18,23 +18,9 @@ const styles = reactive({
 })
 
 const pos = {
-    x: 0,
-    y: 0,
-    left: 0,
-    top: 0,
     faceLeft: true,
     dashing: false
 }
-
-const logPos = () => {
-    getOffset(el)
-    console.log(`x: ${pos.x}, y: ${pos.y}, left: ${pos.left}, top: ${pos.top}`)
-}
-const getOffset = (el) => {
-    pos.left = el.value.offsetLeft
-    pos.top = el.value.offsetTop
-}
-const el = ref()
 
 const lastKeyPressTime = {
     Left: 0,
@@ -57,86 +43,93 @@ const chkDoublePress = (e, key) => {
 
 const chkLeft = (e) => {
     if (!pos.dashing && chkDoublePress(e, 'left')) {
-
-        if (!_Includes(ani, 'dash-start')) {
-            ani.push('dash-start')
-            pos.dashing = true
-        }
-        let id = setInterval(move, 20);
-
-        _Delay(() => {
-            clearInterval(id)
-            _Pull(ani, 'dash-start')
-            pos.dashing = false
-        }, 1000)
-        resetAfter('dash-end', 200)
-
+        dash()
     }
 }
 const chkRight = (e) => {
     if (!pos.dashing && chkDoublePress(e, 'Right')) {
-        if (!_Includes(ani, 'dash-start')) {
+        dash()
+    }
+}
+
+const chkBoundary = () => {
+    const s = getLeftPos()
+    if (pos.faceLeft) {
+        return (s > -config.leftCollisionOffset)
+    }
+    return s <= (config.areaWidth - (config.characterWidth - config.leftCollisionOffset))
+}
+
+const getLeftPos = () => {
+    return _ToInteger(_TrimEnd(styles.left, 'px'))
+}
+
+const correctDirection = (goLeft = true) => {
+    if (goLeft) {
+        _Pull(ani, 'flip')
+    }
+    else {
+        flip()
+    }
+    pos.faceLeft = !pos.faceLeft
+}
+
+// Movements
+const moveLeft = () => {
+    moveInDirection()
+}
+
+const moveRight = () => {
+    moveInDirection(false)
+}
+
+const moveInDirection = (goLeft = true) => {
+    if (pos.dashing) return
+    if (pos.faceLeft != goLeft) {
+        correctDirection(goLeft)
+    }
+    else {
+        run()
+        move()
+    }
+}
+const move = () => {
+    if (chkBoundary()) {
+        let s = getLeftPos()
+        if (pos.faceLeft) {
+            s -= config.speed
+        }
+        else {
+            s += config.speed
+        }
+        styles.left = s + "px";
+    }
+}
+
+const dash = () => {
+    if (!_Includes(ani, 'dash-start')) {
             ani.push('dash-start')
             pos.dashing = true
         }
         let id = setInterval(move, 20);
-
         _Delay(() => {
             clearInterval(id)
             _Pull(ani, 'dash-start')
             pos.dashing = false
         }, 1000)
         resetAfter('dash-end', 200)
-    }
-}
-
-// Movements
-const moveLeft = () => {
-    if (pos.dashing) return
-    if (!pos.faceLeft) { // Toggle
-        if (_Includes(ani, 'flip')) {
-            _Pull(ani, 'flip')
-            pos.faceLeft = true
-        }
-    }
-    else {
-        run()
-        if (pos.left > -config.leftCollisionOffset) {
-            const s = _TrimEnd(styles.left, 'px')
-            styles.left = `${_ToInteger(s) - config.speed}px`
-        }
-    }
-
-}
-
-const moveRight = () => {
-    if (pos.dashing) return
-    if (pos.faceLeft) {
-        if (!_Includes(ani, 'flip')) {
-            ani.push('flip')
-            pos.faceLeft = false
-        }
-    }
-    else {
-        run()
-        if (pos.left <= config.areaWidth) {
-            const s = _TrimEnd(styles.left, 'px')
-            styles.left = `${_ToInteger(s) + config.speed}px`
-        }
-    }
-}
-
-const move = () => {
-    let s = _ToInteger(_TrimEnd(styles.left, 'px'));
-    if (pos.faceLeft) { s -= config.speed }
-    else { s += config.speed }
-    styles.left = s + "px";
 }
 
 // Animations
 const run = () => {
     if (!_Includes(ani, 'run')) {
         ani.push('run')
+    }
+}
+
+const flip = () => {
+    if (!_Includes(ani, 'flip')) {
+        ani.push('flip')
     }
 }
 
@@ -155,7 +148,6 @@ const crouch = () => {
 
 // Events
 const handleKeydown = (e) => {
-    getOffset(el)
     switch (e.key) {
         case "ArrowUp":
         case "w":
@@ -200,11 +192,7 @@ const handleClick = () => {
 onMounted(() => {
     window.addEventListener("keydown", (e) => { handleKeydown(e) })
     window.addEventListener("keyup", (e) => { handleKeyUp(e) })
-    el.value = document.getElementById("char")
 })
-
-
-
 </script>
 <style>
 .flip {
