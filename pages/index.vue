@@ -9,7 +9,13 @@ import '~/assets/css/main.css'
         เอ้ย อย่ามาจิ้มนะ!
         <Playable />
     </div>
-
+    <div class="row">
+    <div class="col"><KeyLogging /></div>
+    <div class="col">
+        <Dance />
+    </div>
+    
+</div>
     <AnimationSheet />
     <h2>② Control</h2>
     <pre>
@@ -22,4 +28,8 @@ import '~/assets/css/main.css'
    → →     d d  Dash Right
     </pre>
     <Hitbox />
+    <h2>③ Dance</h2>
+    <pre>
+    wswsadad
+    </pre>
 </template>
