@@ -10,12 +10,15 @@ import '~/assets/css/main.css'
         <Playable />
     </div>
     <div class="row">
-    <div class="col"><KeyLogging /></div>
-    <div class="col">
-        <Dance />
+        <div class="col">
+            <DevOnly>
+                <KeyLogging />
+            </DevOnly>
+        </div>
+        <div class="col">
+        </div>
+
     </div>
-    
-</div>
     <AnimationSheet />
     <h2>② Control</h2>
     <pre>
