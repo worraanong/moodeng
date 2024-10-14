@@ -107,7 +107,7 @@ const dash = () => {
         ani.push('dash-start')
         pos.dashing = true
     }
-    let id = setInterval(move, 20);
+    const id = setInterval(move, 20);
     _Delay(() => {
         clearInterval(id)
         _Pull(ani, 'dash-start')
