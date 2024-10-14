@@ -58,11 +58,7 @@
             <DanceHollowArrow :dir="['right']" />
         </div>
         <div class="middle-center">
-
-            <DanceArrow :dir="['right']" />
+<DanceNoteSpawner/>
         </div>
-        <DanceArrow :dir="['up']" />
-        <DanceArrow :dir="['down']" />
-        <DanceArrow :dir="['left']" />
     </div>
 </template>

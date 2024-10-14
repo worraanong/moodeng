@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  modules: ["nuxt-lodash"],
+  modules: ["nuxt-lodash", "@nuxt/eslint"],
   lodash: {
     prefix: "_",
     upperAfterPrefix: true,
