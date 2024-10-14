@@ -1,22 +1,22 @@
 <script setup>
 
-let ready = true
+const x = reactive({ ready: true })
+
 const start = () => {
-    let id = setInterval(spawn, 1000);
-    ready = false
+    x.ready = false
+    console.log(x.ready)
+    const id = setInterval(spawn, 1000);
     _Delay(() => {
         clearInterval(id)
     }, 15000)
-    ready = true
+    x.ready = true
 }
 
-
-
- const spawn = () => {
-console.log("A")
- }  
+const spawn = () => {
+    console.log("A")
+}
 
 </script>
 <template>
-    <button v-show="ready" @click="start()" class="tiny" >Start</button>
+    <button :v-if="x.ready" class="tiny" @click="start()">Start</button>
 </template>

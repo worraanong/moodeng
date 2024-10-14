@@ -2,8 +2,15 @@
 defineProps(['dir'])
 </script>
 
+<template>
+    <div class="group">
+        <DanceArrow :dir="[dir, 'hollow']" />
+        <DanceArrow :dir="[dir, 'ground stroke']" />
+    </div>
+</template>
+
 <style>
-.hollow  {
+.hollow {
     color: white;
 }
 
@@ -33,9 +40,3 @@ defineProps(['dir'])
     text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 </style>
-<template>
-    <div class="group">
-        <DanceArrow :dir="[dir, 'hollow']" />
-        <DanceArrow :dir="[dir, 'ground stroke']" />
-    </div>
-</template>

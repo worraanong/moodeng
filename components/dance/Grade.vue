@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps(['idx'])
+defineProps(['idx'])
 const grades = {
     0: "Miss",
     1: "Perfect",
@@ -7,6 +7,11 @@ const grades = {
 }
 const text = (idx) => _Get(grades, idx)
 </script>
+
+<template>
+    <div :class="['tiny', _ToLower(text(idx))]"> {{ text(idx) }} </div>
+</template>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
 
@@ -30,6 +35,3 @@ const text = (idx) => _Get(grades, idx)
     font-style: normal;
 }
 </style>
-<template>
-    <div :class="['tiny', _ToLower(text(idx))]"> {{ text(idx) }} </div>
-</template>

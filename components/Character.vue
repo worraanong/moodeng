@@ -1,9 +1,5 @@
 <script setup>
 import '~/assets/css/animated.css'
-
-const props = defineProps({
-})
-
 const config = {
     leftCollisionOffset: 0, //21,
     characterWidth: 80,
@@ -194,6 +190,12 @@ onMounted(() => {
     window.addEventListener("keyup", (e) => { handleKeyUp(e) })
 })
 </script>
+<template>
+    <div id="char" :style="styles" :class="['base', ani]">
+        <div class="layer-invisible layer-collision" @click="handleClick()"></div>
+    </div>
+</template>
+
 <style>
 .flip {
     transform: scaleX(-1)
@@ -212,8 +214,3 @@ onMounted(() => {
 }
 </style>
 
-<template>
-    <div id="char" :style="styles" :class="['base', ani]">
-        <div class="layer-invisible layer-collision" @click="handleClick()"></div>
-    </div>
-</template>

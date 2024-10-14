@@ -2,6 +2,10 @@
 defineProps(['dir',])
 </script>
 
+<template>
+    <div :class="['note thick', dir]">↑</div>
+</template>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,900&family=Tiny5&display=swap');
 
@@ -40,6 +44,3 @@ defineProps(['dir',])
     color: lightgreen;
 }
 </style>
-<template>
-    <div :class="['note thick', dir]">↑</div>
-</template>

@@ -1,6 +1,7 @@
 <template>
-    <h2>Dev's log</h2>
-    <pre>
+    <div>
+        <h2>Dev's log</h2>
+        <pre>
     Oct 7
 
         I searched for Moo Deng pixel art.
@@ -26,6 +27,6 @@
         After this point, there are many things I can do with it. 
         I'm thinking about making Moo Deng dance next. 
         It is suppose to bounce isn't it?
-    </pre>
-
+        </pre>
+    </div>
 </template>

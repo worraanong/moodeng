@@ -1,3 +1,23 @@
+<template>
+    <div class="note-area">
+        <div class="top-center">
+            <DanceHollowArrow :dir="['up']" />
+        </div>
+        <div class="bottom-center">
+            <DanceHollowArrow :dir="['down']" />
+        </div>
+        <div class="middle-right">
+            <DanceHollowArrow :dir="['left']" />
+        </div>
+        <div class="middle-left">
+            <DanceHollowArrow :dir="['right']" />
+        </div>
+        <div class="middle-center">
+<DanceNoteSpawner/>
+        </div>
+    </div>
+</template>
+
 <style>
 .note-area {
     border: 1px solid #000;
@@ -43,22 +63,3 @@
     transform: translate(-50%, 0);
 }
 </style>
-<template>
-    <div class="note-area">
-        <div class="top-center">
-            <DanceHollowArrow :dir="['up']" />
-        </div>
-        <div class="bottom-center">
-            <DanceHollowArrow :dir="['down']" />
-        </div>
-        <div class="middle-right">
-            <DanceHollowArrow :dir="['left']" />
-        </div>
-        <div class="middle-left">
-            <DanceHollowArrow :dir="['right']" />
-        </div>
-        <div class="middle-center">
-<DanceNoteSpawner/>
-        </div>
-    </div>
-</template>
