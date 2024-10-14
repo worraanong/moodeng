@@ -1,9 +1,10 @@
 <script setup>
-defineProps(['dir',])
+defineProps(['dir','styles', 'left'])
+
 </script>
 
 <template>
-    <div :class="['note thick', dir]">↑</div>
+    <div :class="['note thick', dir]" :style="styles" >↑</div>
 </template>
 
 <style>
@@ -12,7 +13,6 @@ defineProps(['dir',])
 .note {
     /* background-color: oldlace; */
     font-size: 72px;
-
     text-align: center;
     position: absolute;
     color: white;
