@@ -11,7 +11,7 @@ defineProps(['dir'])
 
 <style>
 .hollow {
-    color: white;
+    color: rgb(101, 222, 187);
 }
 
 .ground {
@@ -27,11 +27,8 @@ defineProps(['dir'])
 .group {
     position: relative;
     float: left;
-    /* margin: 0 16px;
-    padding: 4px; */
     width: 63px;
     height: 68px;
-    /* background-color: blueviolet; */
     z-index: -2;
 }
 

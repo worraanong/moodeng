@@ -6,14 +6,14 @@
         <div class="bottom-center">
             <DanceHollowArrow :dir="['down']" />
         </div>
-        <div class="middle-right">
+        <div class="middle-left">
             <DanceHollowArrow :dir="['left']" />
         </div>
-        <div class="middle-left">
+        <div class="middle-right">
             <DanceHollowArrow :dir="['right']" />
         </div>
         <div class="middle-center">
-<DanceNoteSpawner/>
+            <DanceNoteSpawner />
         </div>
     </div>
 </template>

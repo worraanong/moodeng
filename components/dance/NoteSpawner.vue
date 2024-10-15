@@ -1,11 +1,4 @@
 <script setup lang="ts">
-
-const ready = ref(true)
-
-const dirs: string[] = ['up', 'left', 'right', 'down'] as const
-const notes = ref([] as string[])
-const notesOnScreen = ref([] as Note[])
-
 class Note {
     dir: string
     left: number
@@ -15,12 +8,19 @@ class Note {
         this.left = left
     }
 }
+const ready = ref(true)
+
+const dirs: string[] = ['up', 'left', 'right', 'down'] as const
+const notes = ref([] as string[])
+const notesOnScreen = ref([new Note()] as Note[])
+
+
 
 const config = {
-    speed: 10,
-    totalNotes: 8,
-    spawnFrequency: 500,
-    duration: 25 * 1000,
+    speed: 4,
+    totalNotes: 10,
+    spawnFrequency: 1000,
+    duration: 10 * 1000,
 } as const
 const styles = reactive({
     left: '0px'
@@ -28,21 +28,15 @@ const styles = reactive({
 
 const time = ref(0)
 
-const dash = () => {
-    const id = setInterval(move, 20);
-    _Delay(() => {
-        clearInterval(id)
-    }, 1000)
-}
 const lapse = () => {
-    time.value += 1
+    time.value += 10
 }
 
 const start = () => {
     ready.value = false
     time.value = 0
     const id = setInterval(spawn, config.spawnFrequency);
-    const id2 = setInterval(lapse, 2);
+    const id2 = setInterval(lapse, 100);
     assignNotes(config.totalNotes)
     _Delay(() => {
         clearInterval(id)
@@ -67,6 +61,11 @@ const randomizer = (array: string[]) => {
 
 const assignNotes = (n: number) => {
     for (let i = 0; i < n; i++) {
+        //notes.value.push('up') 
+        // notes.value.push('left')
+
+        //notes.value.push('down')
+        //notes.value.push('right')
         notes.value.push(randomizer(dirs))
     }
 }
@@ -96,27 +95,28 @@ const getLeftPos = () => {
 
 const computeLeft = (dir, i) => {
     const x = time.value//_Random(2, 250)
-    //console.log("--- "+i)
+    
 
     //x - (i*25)
 
     // 25 (500/20)
 
-    const m = 250//25
+    const m = 100//25
     switch (dir) {
-        case "left":
         case "down":
-            return `${x - (i * m)}px`
         case "right":
+         //   console.log(i,(x- (i * m)))
+            //return `${x- (i * m)-100}px`
+            return `${x- (i * m)-100}px`
+        case "left":
         case "up":
-            return `-${x - (i * m)}px`
+       // console.log(i,(x- (i * m)))
+            //return `-${x- (i * m)-100}px`
+            return `-${x- (i * m)-100}px`
     }
-
-    return `10px`
 }
 
 const updatedPos = (dir, i) => {
-
     switch (dir) {
         case "left":
             return { left: computeLeft(dir, i), top: '0px' }
@@ -127,33 +127,37 @@ const updatedPos = (dir, i) => {
         case "down":
             return { left: '0px', top: computeLeft(dir, i) }
     }
-
-
-    return { left: computeLeft(dir, i), top: '10px' }
 }
 
 </script>
 <template>
-    {{ time }}
     <button v-show="ready" class="tiny btn-start" role="button" @click="start()"></button>
-    <div class="where" v-for="(n, i) in notesOnScreen" :key="n">
-        <DanceArrow :dir="n.dir" :styles="[updatedPos(n.dir, i)]" />
+    <div class="test">
+    <div  v-for="(n, i) in notesOnScreen" :key="i" class="where">
+        <DanceArrow :dir="[n.dir,'' ]" :styles="[updatedPos(n.dir, i)]" />
     </div>
+</div>
+    <!-- <DanceArrow :dir="['down']"/> -->
 </template>
 
 <style>
 .btn-start:before {
     content: "Start";
+}
+.btn-start{
     padding: 10px;
 }
 
+
 .test {
-    position: absolute;
+    /* transform: ; */
+    top: -34px;
+    left:  -32px;
+    position: relative;
+
 }
 
 .where {
-    /* background-color: blueviolet;
-    width: 20px;
-    height: 30px; */
+    position: relative;
 }
 </style>

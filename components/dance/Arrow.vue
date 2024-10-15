@@ -1,10 +1,10 @@
 <script setup>
-defineProps(['dir','styles', 'left'])
+defineProps(['dir', 'styles', 'left'])
 
 </script>
 
 <template>
-    <div :class="['note thick', dir]" :style="styles" >↑</div>
+    <div :class="['note thick', dir]" :style="styles">↑</div>
 </template>
 
 <style>
@@ -15,7 +15,6 @@ defineProps(['dir','styles', 'left'])
     font-size: 72px;
     text-align: center;
     position: absolute;
-    color: white;
     line-height: 66px;
 }
 
@@ -29,7 +28,7 @@ defineProps(['dir','styles', 'left'])
     color: blue;
 }
 
-.left {
+.right {
     transform: rotate(90deg);
     color: crimson;
 }
@@ -39,7 +38,7 @@ defineProps(['dir','styles', 'left'])
     color: darkorange;
 }
 
-.right {
+.left {
     transform: rotate(270deg);
     color: lightgreen;
 }
