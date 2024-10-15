@@ -1,22 +1,11 @@
 <script setup lang="ts">
-const notesOnScreen = useState('notesOnScreen', ():any[] => [])
-
-const lapse = useState('lapse')
-const removeNote=()=>{
-    notesOnScreen.value.pop()
-}
-
-
-onMounted(() => {
-})
+const notesOnScreen = useState('notesOnScreen', (): Note[] => [])
 </script>
+
 <template>
- notesOnScreen   {{ notesOnScreen }}
- <br/>
-
-
- lapse {{ lapse }}
-<TimeLapse :run="true" :duration-in-seconds="60"/>
+    notesOnScreen {{ notesOnScreen }}
+    <CountTo />
+    <TimeLapse :run="true" :duration-in-seconds="60" />
     <div class="boundary">
         <slot></slot>
     </div>

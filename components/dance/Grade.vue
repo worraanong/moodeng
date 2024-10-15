@@ -1,11 +1,11 @@
-<script setup>
-defineProps(['idx'])
+<script setup lang="ts">
+defineProps({ idx: { type: Number, default: 0 } })
 const grades = {
     0: "Miss",
     1: "Perfect",
     2: "Okay",
 }
-const text = (idx) => _Get(grades, idx)
+const text = (idx:number) => _Get(grades, idx)
 </script>
 
 <template>
@@ -13,7 +13,6 @@ const text = (idx) => _Get(grades, idx)
 </template>
 
 <style>
-
 .miss {
     color: #f00;
 }
@@ -27,6 +26,4 @@ const text = (idx) => _Get(grades, idx)
     color: #0f0;
     font-size: 2rem;
 }
-
-
 </style>

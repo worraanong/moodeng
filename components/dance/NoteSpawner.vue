@@ -5,11 +5,12 @@ const ready = ref(true)
 const dirs: string[] = ['up', 'left', 'right', 'down', 'x', 'x', 'x'] as const
 const notes = ref([] as string[])
 
-const notesOnScreen = useState('notesOnScreen', ():Note[] => [])
-
-const notesIn= ():Note[]  => {
-    return  _Filter(notesOnScreen.value, (x) => {
-        return x.left > -900} ) 
+const notesOnScreen = useState('notesOnScreen', (): Note[] => [])
+const gameStarted = useState('gameStarted', () => false)
+const notesIn = (): Note[] => {
+    return _Filter(notesOnScreen.value, (x) => {
+        return x.left > -900
+    })
 }
 //8:3 900s 24
 //double 200
@@ -25,12 +26,12 @@ const styles = reactive({
 })
 
 const time = ref(0)
-const timeLapse = useState('lapse',() => {
-   return time.value 
+const timeLapse = useState('lapse', () => {
+    return time.value
 })
 const lapse = () => {
     timeLapse.value = time.value += config.speed
-   return timeLapse
+    return timeLapse
 }
 
 
@@ -45,7 +46,7 @@ const start = () => {
     _Delay(() => {
         clearInterval(id)
         clearInterval(id2)
-        ready.value = true
+        gameStarted.value = false
         notesOnScreen.value = []
     }, config.duration)
 }
@@ -53,7 +54,7 @@ const start = () => {
 const spawn = () => {
     if (notes.value.length > 0) {
         const c = notes.value.pop() as string
-        const n = new uNote(c,0).note;
+        const n = new uNote(c, 0).note;
         notesOnScreen.value.push(n)
     }
 }
@@ -66,31 +67,12 @@ const randomizer = (array: string[]) => {
 const assignNotes = (n: number) => {
     for (let i = 0; i < n; i++) {
         //notes.value.push('up') 
-         notes.value.push('left')
-
+        notes.value.push('left')
         //notes.value.push('down')
         //notes.value.push('right')
         //notes.value.push(randomizer(dirs))
     }
 }
-
-const chkBoundary = () => {
-    return true
-}
-const move = () => {
-    if (chkBoundary()) {
-        let s = getLeftPos()
-        if (true) {
-            // if (pos.faceLeft) {
-            s -= config.speed
-        }
-        else {
-            s += config.speed
-        }
-        styles.left = s + "px";
-    }
-}
-
 
 
 const getLeftPos = (v) => {
@@ -102,7 +84,7 @@ const computeLeft = (dir, i) => {
     const m = config.lapseUpdaeFreq //100
     const n = config.spawnFrequency //1000
     //s 20
-    const s =  config.speed/(config.spawnFrequency /config.lapseUpdaeFreq )
+    const s = config.speed / (config.spawnFrequency / config.lapseUpdaeFreq)
     switch (dir) {
         case "down":
         case "right":
@@ -114,45 +96,41 @@ const computeLeft = (dir, i) => {
 
             // console.log(i,(x- (i * m)))
             //return `-${x- (i * m)-100}px`
-            return `-${x - (i*100*s) -100*s}px`
+            return `-${x - (i * 100 * s) - 100 * s}px`
     }
 }
 
-const updatedPos = (n:Note, i:number) => {
+const updatedPos = (n: Note, i: number) => {
     const dir = n.dir
     switch (dir) {
         case "left":
         case "right":
-           {const newV = computeLeft(dir, i)
-            n.left = getLeftPos(newV)
-            return { left: newV, top: '0px' }}
+            {
+                const newV = computeLeft(dir, i)
+                n.left = getLeftPos(newV)
+                return { left: newV, top: '0px' }
+            }
         case "up":
         case "down":
             return { left: '0px', top: computeLeft(dir, i) }
     }
 }
 
+
+onMounted(() => {
+    start()
+})
 </script>
 <template>
-    <button v-show="ready" class="tiny btn-start" role="button" @click="start()"></button>
+    <DanceStartButton />
     <div class="test">
         <div v-for="(n, i) in notesIn()" :key="i" class="where">
             <DanceArrow :dir="[n.dir, '']" :styles="[updatedPos(n, i)]" />
         </div>
     </div>
-    <!-- <DanceArrow :dir="['down']"/> -->
 </template>
 
 <style>
-.btn-start:before {
-    content: "Start";
-}
-
-.btn-start {
-    padding: 10px;
-}
-
-
 .test {
     /* transform: ; */
     top: -34px;

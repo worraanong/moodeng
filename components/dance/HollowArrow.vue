@@ -11,7 +11,7 @@ defineProps(['dir'])
 
 <style>
 .hollow {
-    color: rgb(101, 222, 187);
+    color: rgb(255, 255, 255);
 }
 
 .ground {
