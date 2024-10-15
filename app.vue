@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import '~/assets/css/main.css'
 useSeoMeta({
   title: 'Moo Deng',
   ogTitle: 'Moo Deng',
@@ -7,6 +8,11 @@ useSeoMeta({
   ogImage: 'https://example.com/image.png',
   twitterCard: 'summary_large_image',
 })
+
+useState('language', () => 'th')
+useState('remainingTime', () => 0)
+useState('currentTime', () => 0)
+
 </script>
 <template>
   <div>

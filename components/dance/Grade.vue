@@ -13,7 +13,6 @@ const text = (idx) => _Get(grades, idx)
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
 
 .miss {
     color: #f00;
@@ -29,9 +28,5 @@ const text = (idx) => _Get(grades, idx)
     font-size: 2rem;
 }
 
-.tiny {
-    font-family: "Tiny5", serif;
-    font-weight: 400;
-    font-style: normal;
-}
+
 </style>

@@ -1,6 +1,3 @@
-<script setup>
-import '~/assets/css/main.css'
-</script>
 <template>
     <div>
         <h1>Moo Deng</h1>
