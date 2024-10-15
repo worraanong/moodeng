@@ -7,9 +7,11 @@ import '~/assets/css/main.css'
         <DanceGrade :idx="0" />
         <DanceGrade :idx="2" />
         <DanceGrade :idx="1" />
+        <DanceScore/>
         <div class="boundary">
             <DancePad />
         </div>
+        <Playable />
     </div>
 
 </template>

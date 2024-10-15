@@ -42,4 +42,7 @@ defineProps(['dir', 'styles', 'left'])
     transform: rotate(270deg);
     color: lightgreen;
 }
+.x {
+    display: none;
+}
 </style>
