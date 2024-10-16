@@ -1,9 +1,6 @@
 <template>
     <div>
         <AppNavLink>
-            <NuxtLink to="/"><NuxtImg src="favicon.ico"/></NuxtLink>
-        </AppNavLink>
-        <AppNavLink>
             <NuxtLink to="/">Animation</NuxtLink>
         </AppNavLink>
         <AppNavLink>

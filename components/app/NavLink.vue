@@ -9,6 +9,7 @@
     padding: 5px 20px;
     border: 1px solid #000;
     float: left;
+    background-color: #fff;
 }
 .nav:hover {
     background-color: #eee;
