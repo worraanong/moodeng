@@ -1,10 +1,10 @@
 <template>
     <div>
         <AppNavLink>
-            <NuxtLink to="/">Animation</NuxtLink>
+            <NuxtLink to="/animation">Animation</NuxtLink>
         </AppNavLink>
         <AppNavLink>
-            <NuxtLink to="/">Control</NuxtLink>
+            <NuxtLink to="/control">Control</NuxtLink>
         </AppNavLink>
         <AppNavLink>
             <NuxtLink to="/dance">Dance</NuxtLink>

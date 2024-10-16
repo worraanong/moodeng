@@ -4,9 +4,9 @@ const notesOnScreen = useState('notesOnScreen', (): Note[] => [])
 
 <template>
     notesOnScreen {{ notesOnScreen }}
-    <CountTo />
     <TimeLapse :run="true" :duration-in-seconds="60" />
     <div class="boundary">
+        ⚠️ Area under construction
         <slot></slot>
     </div>
 </template>
@@ -18,5 +18,6 @@ const notesOnScreen = useState('notesOnScreen', (): Note[] => [])
     height: 1040px;
     margin: 50px auto;
     position: relative;
+    color: #f70000;
 }
 </style>

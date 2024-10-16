@@ -1,7 +1,11 @@
 <script setup lang="ts">
 const gameStarted = useState('gameStarted', () => false)
 
-const start = () => gameStarted.value = true
+const start = () => {
+    gameStarted.value = true
+    emit('clicked');
+}
+const emit = defineEmits(['clicked']);
 </script>
 
 <template>

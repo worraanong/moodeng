@@ -17,7 +17,7 @@ const notesIn = (): Note[] => {
 const config = {
     totalNotes: 10,
     duration: 11 * 1000,
-    speed: 5, //px
+    speed: 10, //px
     spawnFrequency: 1000,
     lapseUpdaeFreq: 100,
 } as const
@@ -33,9 +33,6 @@ const lapse = () => {
     timeLapse.value = time.value += config.speed
     return timeLapse
 }
-
-
-
 
 const start = () => {
     ready.value = false
@@ -67,10 +64,10 @@ const randomizer = (array: string[]) => {
 const assignNotes = (n: number) => {
     for (let i = 0; i < n; i++) {
         //notes.value.push('up') 
-        notes.value.push('left')
+        //notes.value.push('left')
         //notes.value.push('down')
         //notes.value.push('right')
-        //notes.value.push(randomizer(dirs))
+        notes.value.push(randomizer(dirs))
     }
 }
 
@@ -118,11 +115,10 @@ const updatedPos = (n: Note, i: number) => {
 
 
 onMounted(() => {
-    start()
 })
 </script>
 <template>
-    <DanceStartButton />
+    <DanceStartButton @clicked="start"/>
     <div class="test">
         <div v-for="(n, i) in notesIn()" :key="i" class="where">
             <DanceArrow :dir="[n.dir, '']" :styles="[updatedPos(n, i)]" />

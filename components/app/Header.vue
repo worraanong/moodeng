@@ -16,10 +16,6 @@
 
 <style>
 .header {
-    background-color: #fff;
-    height: 30px;
-    position: sticky;
-    top: 0px;
-    z-index: 2;
+    margin-bottom: 30px;
 }
 </style>

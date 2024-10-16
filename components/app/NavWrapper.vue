@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div class="nav-wrapper row">
         <div class="col">
             <AppNavLink>
                 <NuxtLink to="/">
@@ -16,3 +16,13 @@
         </div>
     </div>
 </template>
+
+<style>
+.header {
+    background-color: #fff;
+    height: 30px;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+}
+</style>

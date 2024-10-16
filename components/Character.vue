@@ -1,7 +1,7 @@
 <script setup>
 import '~/assets/css/animated.css'
 const config = {
-    leftCollisionOffset: 0, //21,
+    leftCollisionOffset: 21,
     characterWidth: 80,
     areaWidth: 800,
     speed: 4,
@@ -53,7 +53,7 @@ const chkBoundary = () => {
     if (pos.faceLeft) {
         return (s > -config.leftCollisionOffset)
     }
-    return s <= (config.areaWidth - (config.characterWidth - config.leftCollisionOffset))
+    return s < (config.areaWidth - (config.characterWidth+config.leftCollisionOffset))
 }
 
 const getLeftPos = () => {
@@ -202,7 +202,7 @@ onMounted(() => {
 }
 
 #char {
-    position: absolute;
+    position: relative;
 }
 
 .layer-collision {
