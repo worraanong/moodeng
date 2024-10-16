@@ -4,13 +4,12 @@ const props = defineProps({
     alt: { type: String, default: 'close' },
 })
 
-const emit = defineEmits(['created']);
-
+const emit = defineEmits(['clicked']);
 const icon = ref(props.default)
+
 const toggle = () => {
     icon.value = (icon.value == props.default) ? props.alt : props.default
-emit('created');
-
+    emit('clicked');
 }
 </script>
 
@@ -19,5 +18,3 @@ emit('created');
         <AppMenuIcon :icon="icon" />
     </div>
 </template>
-
-<style></style>

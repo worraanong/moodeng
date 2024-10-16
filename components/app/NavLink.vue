@@ -10,8 +10,11 @@
     border: 1px solid #000;
     float: left;
 }
-
+.nav:hover {
+    background-color: #eee;
+}
 .nav a {
     text-decoration: none;
+    user-select: none;
 }
 </style>

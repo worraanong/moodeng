@@ -1,6 +1,6 @@
 <script setup>
-const handleCreate = () => {
-  console.log('Child has been created.');
+const log = () => {
+  console.log('Something happened');
 };
 </script>
 
@@ -26,7 +26,7 @@ const handleCreate = () => {
         </li>
         <li>
             Toggle Icon
-            <AppMenuToggle @created="handleCreate" />
+            <AppMenuToggle @clicked="log" />
         </li>
     </ul>
     </div>
