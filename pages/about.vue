@@ -1,5 +1,6 @@
 <template>
     <div>
+        <ContentDoc path="/entry/hi" />
         <h2>Dev's log</h2>
         <pre>
     Oct 7
