@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+.tiny {
+    font-family: "Tiny5", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .row {
   display: flex;
 }

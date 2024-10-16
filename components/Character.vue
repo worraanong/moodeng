@@ -1,11 +1,7 @@
 <script setup>
 import '~/assets/css/animated.css'
-
-const props = defineProps({
-})
-
 const config = {
-    leftCollisionOffset: 0, //21,
+    leftCollisionOffset: 21,
     characterWidth: 80,
     areaWidth: 800,
     speed: 4,
@@ -57,7 +53,7 @@ const chkBoundary = () => {
     if (pos.faceLeft) {
         return (s > -config.leftCollisionOffset)
     }
-    return s <= (config.areaWidth - (config.characterWidth - config.leftCollisionOffset))
+    return s < (config.areaWidth - (config.characterWidth+config.leftCollisionOffset))
 }
 
 const getLeftPos = () => {
@@ -111,7 +107,7 @@ const dash = () => {
         ani.push('dash-start')
         pos.dashing = true
     }
-    let id = setInterval(move, 20);
+    const id = setInterval(move, 20);
     _Delay(() => {
         clearInterval(id)
         _Pull(ani, 'dash-start')
@@ -194,13 +190,19 @@ onMounted(() => {
     window.addEventListener("keyup", (e) => { handleKeyUp(e) })
 })
 </script>
+<template>
+    <div id="char" :style="styles" :class="['base', ani]">
+        <div class="layer-invisible layer-collision" @click="handleClick()"></div>
+    </div>
+</template>
+
 <style>
 .flip {
     transform: scaleX(-1)
 }
 
 #char {
-    position: absolute;
+    position: relative;
 }
 
 .layer-collision {
@@ -212,8 +214,3 @@ onMounted(() => {
 }
 </style>
 
-<template>
-    <div id="char" :style="styles" :class="['base', ani]">
-        <div class="layer-invisible layer-collision" @click="handleClick()"></div>
-    </div>
-</template>

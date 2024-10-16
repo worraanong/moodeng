@@ -2,7 +2,7 @@
     <div>
         <h2>① Animation</h2>
         <p>Sprite by <a href="https://limpck.itch.io/moodeng">LimpCK</a></p>
-        <img src="~/assets/img/moodeng.png">
+        <NuxtImg src="moodeng.png"/>
         <div class="row">
             <div class="col">
                 <SelectLanguage />

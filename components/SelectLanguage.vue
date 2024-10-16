@@ -1,5 +1,5 @@
 <script setup>
-const lang = useState('language', () => 'th')
+const lang = useState('language')
 </script>
 <template>
     <div>
