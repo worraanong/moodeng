@@ -32,6 +32,10 @@ const log = () => {
                 Nav Mobile
                 <AppNavMobile />
             </li>
+            <li>
+                Toggle Dark Mode
+                <AppMenuToggle :default="'dark'" :alt="'light'" @clicked="log" />
+            </li>
         </ul>
     </div>
 </template>
