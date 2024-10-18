@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxt/image",
     "@nuxtjs/device",
+    "nuxt-gtag",
   ],
   lodash: {
     prefix: "_",
@@ -18,5 +19,8 @@ export default defineNuxtConfig({
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
     },
+  },
+  gtag: {
+    id: "G-09N71Y7KTG",
   },
 });
