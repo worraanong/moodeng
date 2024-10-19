@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxtjs/device",
     "nuxt-gtag",
+    "@nuxtjs/color-mode",
   ],
   lodash: {
     prefix: "_",
@@ -23,4 +24,5 @@ export default defineNuxtConfig({
   gtag: {
     id: "G-09N71Y7KTG",
   },
+
 });

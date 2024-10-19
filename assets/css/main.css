@@ -59,3 +59,8 @@ html {
   max-width: 1200px;
   margin: 60px auto;
 }
+
+.dark-mode {
+background-color: rgb(34, 34, 34);
+color: rgb(242, 234, 238);
+}

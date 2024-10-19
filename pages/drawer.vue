@@ -34,7 +34,7 @@ const log = () => {
             </li>
             <li>
                 Toggle Dark Mode
-                <AppMenuToggle :default="'dark'" :alt="'light'" @clicked="log" />
+                <AppDarkModeToggle />
             </li>
         </ul>
     </div>

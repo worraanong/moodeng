@@ -15,7 +15,7 @@ useState('currentTime', () => 0)
 
 </script>
 <template>
-  <div>
+  <div class="theme-dark">
     <AppHeader />
     <NuxtRouteAnnouncer />
     <NuxtLayout>
