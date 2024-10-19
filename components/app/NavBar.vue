@@ -1,19 +1,24 @@
 <template>
     <div>
-        <AppNavLink>
-            <NuxtLink to="/animation">Animation</NuxtLink>
-        </AppNavLink>
-        <AppNavLink>
-            <NuxtLink to="/control">Control</NuxtLink>
-        </AppNavLink>
-        <AppNavLink>
-            <NuxtLink to="/dance">Dance</NuxtLink>
-        </AppNavLink>
-        <AppNavLink>
-            <NuxtLink to="/about">About</NuxtLink>
-        </AppNavLink>
-        <AppNavLink>
-            <NuxtLink to="https://github.com/worraanong/moodeng" target="_blank">View on GitHub</NuxtLink>
-        </AppNavLink>
+        <NuxtLink to="/animation">
+            <AppNavLink>
+                <div class="speech-bubble">Animation</div></AppNavLink>
+        </NuxtLink>
+        <NuxtLink to="/control">
+            <AppNavLink>
+                <div class="speech-bubble">Control</div></AppNavLink>
+        </NuxtLink>
+        <NuxtLink to="/dance">
+            <AppNavLink>
+                <div class="speech-bubble">Dance</div></AppNavLink>
+        </NuxtLink>
+        <NuxtLink to="/about">
+            <AppNavLink>
+                <div class="speech-bubble">About</div></AppNavLink>
+        </NuxtLink>
+        <NuxtLink to="https://github.com/worraanong/moodeng" target="_blank">
+            <AppNavLink>
+                <div class="speech-bubble">View on GitHub</div></AppNavLink>
+        </NuxtLink>
     </div>
 </template>

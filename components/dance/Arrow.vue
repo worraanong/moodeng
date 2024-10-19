@@ -8,7 +8,6 @@ defineProps(['dir', 'styles', 'left'])
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,900&family=Tiny5&display=swap');
 
 .note {
     /* background-color: oldlace; */
@@ -16,12 +15,6 @@ defineProps(['dir', 'styles', 'left'])
     text-align: center;
     position: absolute;
     line-height: 66px;
-}
-
-.thick {
-    font-family: "DM Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
 }
 
 .up {
