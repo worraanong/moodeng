@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 const expand = ref(false)
 const expandMenu = () => {
     expand.value = !expand.value
@@ -9,7 +8,9 @@ const expandMenu = () => {
 <template>
     <div class="nav-mobile">
         <AppNavWrapper>
-            <AppMenuToggle @clicked="expandMenu" />
+            <div class="menu-toggle">
+                <AppMenuToggle @clicked="expandMenu" />
+            </div>
         </AppNavWrapper>
         <Transition>
             <div v-show="expand">
@@ -20,8 +21,27 @@ const expandMenu = () => {
 </template>
 
 <style>
+.nav-mobile .menu-toggle {
+    padding: 8px;
+}
+
 .nav-mobile .nav {
     float: none !important;
+    padding: 12px 24px;
+}
+
+.nav-mobile .nav-wrapper {
+    height: 62px;
+    background-color: var(--moo-deng-drenched);
+    color: #fff;
+}
+
+.nav-mobile a {
+    text-decoration: none;
+}
+
+.nav-mobile .link-home .nav {
+    background-color: var(--moo-deng-drenched);
 }
 
 .float-right {
@@ -40,6 +60,5 @@ const expandMenu = () => {
 .v-enter-from,
 .v-leave-to {
     opacity: 0;
-
 }
 </style>
