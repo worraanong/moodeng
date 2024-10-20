@@ -9,7 +9,7 @@ I wondered if anybody had made a sprite sheet for an internet sensation baby hip
 
 I then stumbled upon this cute sprite by [LimpCK](https://limpck.itch.io/moodeng)
 
-![Moo Deng](../public/moodeng.png)
+![Moo Deng](/moodeng.png)
 
 
 To my surprise, even though it was just 4 images, I managed to make sets of animations out of it.
