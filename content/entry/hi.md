@@ -1,3 +1,8 @@
+---
+title: 'About this site'
+description: 'moodeng.nuxt.dev is built with Nuxt by Moo Deng fan, aka me'
+---
+
 # Hi
 
 This is my Hacktoberfest 2024 mini project.

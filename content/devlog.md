@@ -9,7 +9,7 @@ I wondered if anybody had made a sprite sheet for an internet sensation baby hip
 
 I then stumbled upon this cute sprite by [LimpCK](https://limpck.itch.io/moodeng)
 
-![Moo Deng](../public/moodeng.png)
+![Moo Deng](/moodeng.png)
 
 
 To my surprise, even though it was just 4 images, I managed to make sets of animations out of it.
@@ -74,3 +74,11 @@ so for now I just random notes every 1 second.
 Please bare with me for minimum effort on styles.
 
 I don't usually write CSS and havn't decided on which framework to use yet. 
+
+## Oct 20
+
+I think maybe I can make a music with PowerShell and record it, but there are 'Whoosh' sound of audion cut after some notes. So, it was a failed attemped.
+
+Anyway, here is a Twinkle twinkle little star [scripts](/entry/beep) you can copy and try.
+
+I consider make a Bad Apple ver. in the future. 

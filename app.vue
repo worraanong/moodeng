@@ -5,10 +5,18 @@ useSeoMeta({
   ogTitle: 'Moo Deng',
   description: 'หมูเด้ง จะแจกความฉดใฉหั้ยทุกค้นนน ♥',
   ogDescription: 'หมูเด้ง จะแจกความฉดใฉหั้ยทุกค้นนน ♥',
-  ogImage: 'https://example.com/image.png',
+  ogImage: 'https://moodeng.nuxt.dev/og.png',
+  ogImageType: 'image/png',
+  ogImageAlt: 'Moo Deng',
+  ogImageHeight: 628,
+  ogImageWidth: 1200,
   twitterCard: 'summary_large_image',
 })
-
+useHead({
+  htmlAttrs: {
+    lang: "en",
+  },
+});
 useState('language', () => 'th')
 useState('remainingTime', () => 0)
 useState('currentTime', () => 0)

@@ -37,6 +37,7 @@ const log = () => {
                 <AppDarkModeToggle />
             </li>
         </ul>
+
     </div>
 </template>
 <style>

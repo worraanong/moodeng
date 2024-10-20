@@ -24,6 +24,6 @@
 }
 
 .nav:hover::after {
-    content: url('favicon.ico');
+    content: url('/favicon.ico');
 }
 </style>
