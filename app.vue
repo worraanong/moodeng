@@ -8,7 +8,11 @@ useSeoMeta({
   ogImage: 'https://example.com/image.png',
   twitterCard: 'summary_large_image',
 })
-
+useHead({
+  htmlAttrs: {
+    lang: "en",
+  },
+});
 useState('language', () => 'th')
 useState('remainingTime', () => 0)
 useState('currentTime', () => 0)

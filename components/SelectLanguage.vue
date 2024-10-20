@@ -3,7 +3,8 @@ const lang = useState('language')
 </script>
 <template>
     <div>
-        <select v-model="lang">
+        <label for="lang-select">Language:&nbsp;</label>
+        <select id="lang-select" v-model="lang">
             <option value="en">English</option>
             <option value="th">ภาษาไทย</option>
         </select>

@@ -13,13 +13,13 @@
             </div>
         </div>
         <pre>
-                                Hold
-    ↑       w   Jump
-    ↓       s   Crouch
-    ←       a   Go Left         Run
-    →       d   Go Right        Run
-   ← ←     a a  Dash Left
-   → →     d d  Dash Right
+                                    Hold
+    ↑       w       Jump
+    ↓       s       Crouch
+    ←       a       Go Left         Run
+    →       d       Go Right        Run
+   ← ←     a a      Dash Left
+   → →     d d      Dash Right
     </pre>
         <Hitbox />
     </div>
