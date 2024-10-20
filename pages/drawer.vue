@@ -36,8 +36,16 @@ const log = () => {
                 Toggle Dark Mode
                 <AppDarkModeToggle />
             </li>
+            <li>
+                <iframe width="560" height="315" src="https://musiclab.chromeexperiments.com/Song-Maker/embed/5602749468770304" frameborder="0" allowfullscreen></iframe>
+            </li> 
+                <!-- https://musiclab.chromeexperiments.com/Song-Maker/song/5602749468770304
+                 https://musiclab.chromeexperiments.com/Song-Maker/embed/5714226821332992 -->
+            <li>
+                <MusicPlayer/>
+            </li>
         </ul>
-
+       
     </div>
 </template>
 <style>
