@@ -8,7 +8,7 @@ const config = {
     doublePressDelta: 200
 }
 
-const ani = reactive(['stand'])
+const ani = reactive(['stand']) // no not ref
 const styles = reactive({
     left: '200px'
 })
