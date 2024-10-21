@@ -45,7 +45,7 @@ const reset = async () => {
         <div style="width: 60px; height: 60px;">
             <h1>{{ note }}</h1>
         </div>
-        <button class="tiny btn-start" role="button" @click="startShowNote()">&nbsp;</button>
+        <button class="tiny" role="button" @click="startShowNote()">Start dancing</button>
         <NonPlayable ref="child" :action="note" />
     </div>
 </template>

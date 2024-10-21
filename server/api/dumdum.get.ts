@@ -4,7 +4,8 @@ import * as readline from "node:readline";
 
 export default defineEventHandler(async (event) => {
   const data: string[] = [];
-  const filePath = path.join(process.cwd(), "assets", "dumdum.txt");
+  const filePath = path.join(process.cwd(), "public", "dumdum.txt");
+  // const filePath = path.join(process.cwd(), "assets", "dumdum.txt");
   const lineReader = readline.createInterface({
     input: fs.createReadStream(filePath),
   });
