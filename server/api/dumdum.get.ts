@@ -7,9 +7,9 @@ export default defineEventHandler(async (event) => {
   const data: string[] = [];
   //const filePath = resolvePath("/dumdum.txt")
 
-  const filePath = path.resolve(__dirname,"public", "dumdum.txt");
+  //const filePath = path.resolve(__dirname,"public", "dumdum.txt");
   //console.log(filePath)
-  // const filePath = path.join(process.cwd(), "assets", "dumdum.txt");
+  const filePath = path.join(process.cwd(), "public", "dumdum.txt");
   const lineReader = readline.createInterface({
     input: fs.createReadStream(filePath),
   });
