@@ -9,13 +9,13 @@ export default defineEventHandler(async (event) => {
 
   //const filePath = path.resolve(__dirname,"public", "dumdum.txt");
   //console.log(filePath)
-  const filePath = path.join(process.cwd(), "public", "dumdum.txt");
-  const lineReader = readline.createInterface({
-    input: fs.createReadStream(filePath),
-  });
-  for await (const line of lineReader) {
-    data.push(line);
-  }
+  // const filePath = path.join(process.cwd(), "public", "dumdum.txt");
+  // const lineReader = readline.createInterface({
+  //   input: fs.createReadStream(filePath),
+  // });
+  // for await (const line of lineReader) {
+  //   data.push(line);
+  // }
 
   data = ['aa','','','','','','dd','','','','','','w','','','','w','','','','a','','d','','a','','aa','','','','d','','dd','','','','s','','s','','s','s','d','a','d','a','w','']
   return data;
