@@ -23,7 +23,6 @@ const startShowNote = async () => {
     playAudio()
 }
 
-
 const playAudio = () => {
     const audio = new Audio('/dumdum.wav');
     audio.play();
@@ -34,7 +33,6 @@ const fetchNotes = async () => {
 }
 
 const reset = async () => {
-
     notes.value = await fetchNotes() ?? []
 }
 
@@ -42,7 +40,7 @@ const reset = async () => {
 <template>
     <div>
         <DevOnly>
-            <textarea v-model="notes" disabled></textarea>
+            <textarea v-model="notes" disabled rows="4"></textarea>
         </DevOnly>
         <div style="width: 60px; height: 60px;">
             <h1>{{ note }}</h1>

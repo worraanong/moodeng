@@ -2,13 +2,6 @@
 import '~/assets/css/animated.css'
 
 const props = defineProps(['action'])
-const commands = ['w', 's', 'w', 'w', 's', 'w', 's']
-
-
-const modeKey = ref(0)
-const forceRerender = () => {
-    modeKey.value += 1;
-}
 
 const ani = reactive(['stand'])
 const styles = reactive({
@@ -16,7 +9,6 @@ const styles = reactive({
 })
 const config = {
     speed: 4,
-
 }
 const actFromCommands = () => {
     handleCommand(props.action)
@@ -66,25 +58,6 @@ const jump = () => {
 
 const crouch = () => {
     resetAfter('break')
-    // if (!_Includes(ani.value, 'break')) {
-    //     _Pull(ani.value, 'stand')
-    //     ani.value.push('break')
-    // }
-}
-
-const run = () => {
-    if (!_Includes(ani, 'run')) {
-        ani.push('run')
-    }
-}
-const moveInDirection = (goLeft = true) => {
-    if (!goLeft) {
-        correctDirection(goLeft)
-    }
-    else {
-        run()
-        move()
-    }
 }
 
 const correctDirection = (goLeft = true) => {
@@ -129,7 +102,7 @@ const handleCommand = (c: string) => {
 </script>
 <template>
     <div>
-        <div id="char" :key="modeKey" :style="styles" :class="['base', ani]">
+        <div id="char" :style="styles" :class="['base', ani]">
         </div>
     </div>
 </template>
