@@ -5,7 +5,7 @@
 
 .break,
 .crouch:hover {
-  background: var(--img-moodeng) 0 0 !important;
+  background: var(--img-moodeng) 0 0;
 }
 
 .charge {

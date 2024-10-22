@@ -45,7 +45,7 @@ const dash = (faceLeft: boolean) => {
     resetAfter('dash-end', 200)
 }
 
-const resetAfter = (x: string, delay = 800) => {
+const resetAfter = (x: string, delay = 500) => {
     ani.push(x)
     _Delay(() => {
         _Pull(ani, x)
@@ -57,7 +57,14 @@ const jump = () => {
 }
 
 const crouch = () => {
-    resetAfter('break')
+    if (!_Includes(ani, 'break')) {
+        _Pull(ani, 'stand')
+        ani.push('break')
+    }
+    _Delay(() => {
+        ani.push('stand')
+        _Pull(ani, 'break')
+    }, 400)
 }
 
 const correctDirection = (goLeft = true) => {
