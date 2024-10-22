@@ -1,7 +1,7 @@
 import * as path from "node:path";
 import * as fs from "node:fs";
 import * as readline from "node:readline";
-import * as process from "node:process"
+import { cwd } from 'node:process';
 
 export default defineEventHandler(async (event) => {
   let data: string[] = [];
@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
 
   //const filePath = path.resolve(__dirname,"public", "dumdum.txt");
   //console.log(filePath)
-   const filePath = path.join(process.cwd(), "public", "dumdum.txt");
+   const filePath = path.join(cwd(), "public", "dumdum.txt");
    console.log(`File path: ${filePath}`)
    const lineReader = readline.createInterface({
     input: fs.createReadStream(filePath),

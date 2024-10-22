@@ -10,7 +10,6 @@ export default defineNuxtConfig({
     "@nuxtjs/device",
     "nuxt-gtag",
     "@nuxtjs/color-mode",
-    "process",
   ],
   lodash: {
     prefix: "_",
