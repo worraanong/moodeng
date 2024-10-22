@@ -7,22 +7,22 @@ import * as readline from "node:readline";
 
 export default defineEventHandler(async (event) => {
   let data: string[] = [];
-
+  const filePath = "public/dumdum.txt"
   // try {
 
   //const filePath = path.resolve(__dirname,"public", "dumdum.txt");
   //  const filePath = path.join(cwd(), "public", "dumdum.txt");
   //  console.log(`File path: ${filePath}`)
-  //  const lineReader = readline.createInterface({
-  //   input: fs.createReadStream(filePath),
-  // });
-  // for await (const line of lineReader) {
-  //   data.push(line);
-  // }
+   const lineReader = readline.createInterface({
+    input: fs.createReadStream(filePath),
+  });
+  for await (const line of lineReader) {
+    data.push(line);
+  }
   // }
   // catch (err) {
     // console.log(`Read file error: ${err}`)
-  data = ['aa','','','','','','dd','','','','','','w','','','','w','','','','a','','d','','a','','aa','','','','d','','dd','','','','s','','s','','s','s','d','a','d','a','w','']
+ // data = ['aa','','','','','','dd','','','','','','w','','','','w','','','','a','','d','','a','','aa','','','','d','','dd','','','','s','','s','','s','s','d','a','d','a','w','']
   // }
   return data;
   //   const data = await fs.promises.readFile(filePath, "utf-8");
