@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     },
   },
   gtag: {
-    id: "G-09N71Y7KTG",
+    id: process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID,
   },
 
 });
