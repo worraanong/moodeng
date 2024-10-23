@@ -16,6 +16,9 @@ useHead({
   htmlAttrs: {
     lang: "en",
   },
+  meta: [
+    { name: 'google-site-verification', content: 'ZDXPyaAX_avZDVoYMGHWXztDWeQZDOzO-HtfT28MTXw' }
+  ]
 });
 useState('language', () => 'th')
 useState('remainingTime', () => 0)
